@@ -1,0 +1,20 @@
+//. Richest Customer Wealth
+//https://leetcode.com/problems/richest-customer-wealth/description/
+int maximumWealth(int** accounts, int accountsSize, int* accountsColSize) {
+    int max = 0;
+
+    for (int i = 0; i < accountsSize; i++) {
+        int wealth = 0;
+
+        for (int j = 0; j < accountsColSize[i]; j++) {
+            wealth += accounts[i][j];
+        }
+
+        if (wealth > max) {
+            max = wealth;
+        }
+    }
+
+    return max;
+}
+
